@@ -2,14 +2,6 @@ Nctuplus::Application.routes.draw do
 
   root :to => "main#index"
 
-  #----------- [devise] user account concerned -----------
-  devise_for :users, #:skip=>[:registrations, :confirmations, :passwords],
-    :controllers => { :omniauth_callbacks => "callbacks"},
-    :path=>"/",
-    :path_names => {
-    :sign_in  => 'login',
-    :sign_out => 'logout' }
-
   #--------- bulletin -----------
   resources :bulletin
 
@@ -211,4 +203,9 @@ Nctuplus::Application.routes.draw do
 
   post "sessions/save_lack_course"
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      devise_for :users, controllers: { sessions: 'devise/sessions', omniauth_callbacks: 'api/v1/auth' }
+    end
+  end
 end
