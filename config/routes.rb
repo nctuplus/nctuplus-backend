@@ -203,9 +203,7 @@ Nctuplus::Application.routes.draw do
 
   post "sessions/save_lack_course"
 
-  namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      devise_for :users, controllers: { sessions: 'devise/sessions', omniauth_callbacks: 'api/v1/auth' }
-    end
+  scope :path => '/api/v1/', :module => "api/v1", :as => 'v1' do
+    devise_for :users, controllers: { sessions: 'devise/sessions', omniauth_callbacks: 'api/v1/auth' }
   end
 end
