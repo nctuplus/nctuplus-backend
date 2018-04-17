@@ -237,6 +237,7 @@ GEM
     public_suffix (3.0.1)
     puma (3.10.0)
     rack (2.0.3)
+    rack-cors (1.0.2)
     rack-jsonp-middleware (0.0.10)
       rack
     rack-test (0.6.3)
@@ -398,6 +399,7 @@ DEPENDENCIES
   omniauth-nctu
   paperclip
   puma
+  rack-cors
   rack-jsonp-middleware
   rails (= 5.0)
   rails-erd
