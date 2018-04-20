@@ -205,5 +205,7 @@ Nctuplus::Application.routes.draw do
 
   scope :path => '/api/v1/', :module => "api/v1", :as => 'v1' do
     devise_for :users, controllers: { sessions: 'devise/sessions', omniauth_callbacks: 'api/v1/auth' }
+
+    get 'user', to: 'user#index'
   end
 end
