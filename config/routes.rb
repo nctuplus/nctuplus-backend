@@ -207,5 +207,6 @@ Nctuplus::Application.routes.draw do
     devise_for :users, controllers: { sessions: 'devise/sessions', omniauth_callbacks: 'api/v1/auth' }
 
     get 'user', to: 'user#index'
+    resources :courses, :only => [:index, :show]
   end
 end
