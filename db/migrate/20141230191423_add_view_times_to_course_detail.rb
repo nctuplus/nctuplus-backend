@@ -1,5 +1,5 @@
 class AddViewTimesToCourseDetail < ActiveRecord::Migration
   def change
-		add_column :course_details, :view_times, :integer, :default=>0
+		add_column :course_details, :view_times, :integer, default: 0, null: false
   end
 end
