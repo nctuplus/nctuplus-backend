@@ -7,11 +7,9 @@ RUN apt-get update && \
                        --no-install-recommends && \
 rm -rf /var/lib/apt/lists/*
 
-ENV APP_ROOT /workspace
+ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
-COPY . $APP_ROOT
+COPY Gemfile* $APP_ROOT/
 
-RUN bundle install
-
-CMD ["rails", "server", "-b", "0.0.0.0"]
+RUN bundle install --jobs=4
