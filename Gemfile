@@ -111,3 +111,6 @@ gem 'bourbon', '4.2.7'
 group :production do
   gem 'puma'
 end
+
+# fast_jsonapi
+gem 'fast_jsonapi'

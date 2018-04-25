@@ -110,6 +110,8 @@ GEM
     execjs (2.7.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
+    fast_jsonapi (1.1.1)
+      activesupport (>= 4.2)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
@@ -380,6 +382,7 @@ DEPENDENCIES
   devise
   em-resolv-replace
   eventmachine
+  fast_jsonapi
   font-awesome-rails
   google-api-client
   googlebooks
@@ -420,4 +423,4 @@ DEPENDENCIES
   zeroclipboard-rails
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
